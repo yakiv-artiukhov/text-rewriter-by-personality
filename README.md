@@ -1,4 +1,4 @@
-# 🧠 PersonaRewriter
+# 🎭📝 PersonaRewriter
 
 **PersonaRewriter** is a two-part application that rewrites text fragments based on a given personality description. The system includes:
 
@@ -10,11 +10,11 @@ Both components are containerized and managed with Docker Compose.
 ---
 
 ## 📦 Project Structure
-text-rewriter-by-personality/
-├── rewriter.client/ # Streamlit frontend
-├── rewriter.server/ # FastAPI backend
-├── docker-compose.yml # Orchestration for client/server
-├── example.env # Example configuration
+text-rewriter-by-personality/  
+├── rewriter.client/ # Streamlit frontend  
+├── rewriter.server/ # FastAPI + LangChain backend  
+├── docker-compose.yml # Orchestration for client/server  
+├── example.env # Example configuration  
 └── README.md
 
 ---
@@ -34,14 +34,16 @@ Create a .env file based on the provided template:
 cp example.env .env
 ```
 Inside .env, define the following:
+```
 GOOGLE_API_KEY=your_google_api_key_here
+```
 
 ### 3. Build and run the application
 ```bash
 docker compose build
 docker compose up
 ```
-The Streamlit client will be available at: http://localhost:5585
+The Streamlit client will be available at: http://localhost:5585/. By default, the "Text fragment" field is pre-filled with sample text, but it can be replaced with any other.  
 The FastAPI server will be available at: http://localhost:5583/
 
 ---
