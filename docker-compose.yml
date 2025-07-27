@@ -1,0 +1,14 @@
+services:
+  server:
+    build: ./rewriter.server
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+    ports:
+      - "5583:5583"
+  client:
+    build: ./rewriter.client
+    ports:
+      - "5585:5585"
+    depends_on:
+      - server
